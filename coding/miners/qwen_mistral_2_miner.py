@@ -45,7 +45,7 @@ def miner_init(self):
     """
 
     def model_factory(
-        api_base="http://localhost:16414/v1",
+        api_base="http://localhost:16571/v1",
         model_name=self.config.neuron.model_id,
         max_tokens=4096,
         temperature=0.0,

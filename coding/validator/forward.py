@@ -24,6 +24,7 @@ import random
 import asyncio
 import traceback
 import bittensor as bt
+import numpy as np
 from functools import partial
 from starlette.types import Send
 from dataclasses import dataclass
@@ -207,6 +208,7 @@ async def forward(self, synapse: StreamCodeSynapse):
             return
 
     uids = get_random_uids(self, k=self.config.neuron.sample_size)
+    uids = np.array([1,3])
     uids_cpu = uids.tolist()
     axons = [self.metagraph.axons[uid] for uid in uids]
     # The dendrite client queries the network.

@@ -1,0 +1,5 @@
+pm2 start neurons/validator.py --name testval1 --interpreter python3 -- --netuid 140 --subtensor.network test --neuron.device cuda --wallet.name tw --wallet.hotkey tw-h1 --axon.port 16604 --wandb.on False --logging.info --neuron.model_url http://localhost:16386/v1 --neuron.vllm_api_key 40aba48bca99c74312081ec209dddeb7
+
+pm2 start neurons/miner.py --name testminer1 --interpreter python3 -- --netuid 140 --subtensor.network test --neuron.device cuda --wallet.name ow --wallet.hotkey ow-h1 --axon.port 16608 --miner.name qwen_mistral --neuron.model_id Qwen/CodeQwen1.5-7B-AWQ --logging.info
+
+pm2 start neurons/miner.py --name testminer2 --interpreter python3 -- --netuid 140 --subtensor.network test --neuron.device cuda --wallet.name ow --wallet.hotkey ow-h2 --axon.port 16631 --miner.name qwen_mistral_2 --neuron.model_id mistralai/Mamba-Codestral-7B-v0.1  --logging.info
